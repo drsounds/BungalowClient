@@ -4,7 +4,6 @@ using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Runtime.Serialization;
-using Bungalow.Spotify.Models;
 
 namespace Spotify.Web.Models
 {

@@ -2,13 +2,24 @@
     x:Class="Bungalow.Pages.StartPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Bungalow.Pages"
+    xmlns:spotify="using:Spotify.Web.Models"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:v="using:Bungalow.ViewModel"
     mc:Ignorable="d">
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock>Start</TextBlock>
-       
+        <Hub DataContext="{x:Bind ViewModel}">
+            <HubSection x:Name="TestHub" Header="Featured Albums">
+                <DataTemplate x:DataType="v:StartPageViewModel">
+                    <GridView ItemsSource="{x:Bind FeaturedAlbums.Items}">
+                        <GridView.ItemTemplate>
+                            <DataTemplate x:DataType="spotify:Album">
+                                <TextBlock Text="{x:Bind Name}"></TextBlock>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                    </GridView>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
     </Grid>
 </Page>

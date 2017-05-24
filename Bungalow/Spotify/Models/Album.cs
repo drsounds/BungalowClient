@@ -4,13 +4,20 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
-using Bungalow.Spotify.Models;
 
 namespace Spotify.Web.Models
 {
     [DataContract]
     public class Album : Model
     {
+        public Album()
+        {
+            Tracks = new Trackset();
+            Images = new List<Image>();
+            Genres = new List<Genre>();
+            Copyrights = new List<Copyright>();
+            Artists = new List<Artist>();
+        }
         [DataMember(Name="album_type")]
         public string AlbumType { get; set; }
         [DataMember(Name = "artists")]

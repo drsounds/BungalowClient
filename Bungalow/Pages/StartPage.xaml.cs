@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
+using Bungalow.ViewModel;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Bungalow.Pages
@@ -25,6 +25,9 @@ namespace Bungalow.Pages
         public StartPage()
         {
             this.InitializeComponent();
+            this.ViewModel = new StartPageViewModel();
         }
+
+        public StartPageViewModel ViewModel { get; private set; }
     }
 }

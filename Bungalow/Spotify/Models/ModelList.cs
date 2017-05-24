@@ -12,6 +12,10 @@ namespace Spotify.Web.Models
     [DataContract]
     public class ModelList<T> where T : Model
     {
+        public ModelList()
+        {
+            Items = new List<T>();
+        }
         [DataMember(Name = "href")]
         public string Href { get; set; }
         [DataMember(Name = "items")]

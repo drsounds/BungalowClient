@@ -1,5 +1,4 @@
-﻿using Bungalow.Spotify.Models;
-using Spotify.Web.Models;
+﻿using Spotify.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +25,22 @@ namespace Spotify.Web
             {
                 Items = {
                     GetTrack()
+                }
+            };
+        }
+        public AlbumList GetFeaturedAlbums()
+        {
+            return new AlbumList
+            {
+                Total=1,
+                Href="",
+                Limit=1,
+                Offset=0,
+                Next="",
+                Previous="",
+                Items =
+                {
+                    GetAlbum()
                 }
             };
         }
@@ -64,10 +79,9 @@ namespace Spotify.Web
             {
                 Uri = "spotify:album:6sFyn9bcvCqdzs7ULVzAER",
                 Id = "6sFyn9bcvCqdzs7ULVzAER",
+                Name = "Vincero",
                 Type = "album",
                 AlbumType = "album",
-                ReleaseDate = DateTime.Now,
-                Tracks = GetTrackset()
             };
         }
         public Track GetTrack()
@@ -82,8 +96,7 @@ namespace Spotify.Web
                 Artists =
                 {
                     GetArtist()   
-                },
-                Album=GetAlbum()
+                }
                 
             };
         }

@@ -8,6 +8,10 @@ namespace Spotify.Web.Models
     [DataContract]
     public class Track : Model
     {
+        public Track()
+        {
+            Artists = new List<Artist>();
+        }
         [DataMember(Name = "artists")]
         public List<Artist> Artists { get; private set; }
         [DataMember(Name = "album")]

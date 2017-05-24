@@ -7,19 +7,13 @@ using Spotify.Web.Models;
 
 namespace Bungalow.ViewModel
 {
-    public class StartViewModel
+    public class StartPageViewModel
     {
-        public StartViewModel()
+        public StartPageViewModel()
         {
             Spotify.Web.Mockify mockify = new Spotify.Web.Mockify();
 
-            FeaturedAlbums = new AlbumList
-            {
-                Items =
-                {
-                    mockify.GetAlbum()
-                }
-            };
+            FeaturedAlbums = mockify.GetFeaturedAlbums();
         }
         public AlbumList FeaturedAlbums { get; set; }
     }

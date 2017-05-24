@@ -127,6 +127,7 @@
     <Compile Include="Spotify\Models\User.cs" />
     <Compile Include="Spotify\Spotify.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
+    <Compile Include="ViewModel\StartPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
