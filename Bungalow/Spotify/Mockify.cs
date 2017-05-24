@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bungalow.Spotify
+namespace Spotify.Web
 {
     public class Mockify 
     {

@@ -6,7 +6,6 @@ using System.Net;
 using System.Text;
 using Spotify.Web.Models;
 using System.Runtime.Serialization.Json;
-using Bungalow.Spotify.Models;
 
 namespace Spotify.Web
 {

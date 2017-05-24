@@ -9,6 +9,6 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock>Start</TextBlock>
-      
+       
     </Grid>
 </Page>
