@@ -11,6 +11,6 @@ namespace Spotify.Web.Models
     public class Album : Model
     {
         [DataMember(Name = "artists")]
-        public IEnumerable<Artist> Artists { get; private set; }
+        public List<Artist> Artists { get; private set; }
     }
 }

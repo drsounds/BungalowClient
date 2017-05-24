@@ -15,7 +15,7 @@ namespace Bungalow.Spotify.Models
         [DataMember(Name = "href")]
         public string Href { get; set; }
         [DataMember(Name = "items")]
-        public IEnumerable<T> Items { get; set; }
+        public List<T> Items { get; set; }
         [DataMember(Name = "limit")]
         public int Limit { get; set; }
         [DataMember(Name = "total")]

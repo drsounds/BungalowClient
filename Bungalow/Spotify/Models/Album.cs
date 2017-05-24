@@ -14,7 +14,7 @@ namespace Spotify.Web.Models
         [DataMember(Name="album_type")]
         public string AlbumType { get; set; }
         [DataMember(Name = "artists")]
-        public IEnumerable<Artist> Artists { get; private set; }
+        public List<Artist> Artists { get; private set; }
         [DataMember(Name = "popularity")]
         public int Popularity { get; set; }
         [DataMember(Name = "label")]
@@ -22,9 +22,9 @@ namespace Spotify.Web.Models
         [DataMember(Name = "release_date")]
         public DateTime ReleaseDate { get; set; }
         [DataMember(Name = "copyrights")]
-        public IEnumerable<Copyright> Copyrights {get;set;}
+        public List<Copyright> Copyrights {get;set;}
         [DataMember(Name = "genres")]
-        public IEnumerable<Genre> Genres { get; set; }
+        public List<Genre> Genres { get; set; }
         [DataMember(Name="images")]
         public List<Image> Images { get; set; }
         [DataMember(Name="tracks")]

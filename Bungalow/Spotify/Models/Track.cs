@@ -9,7 +9,7 @@ namespace Spotify.Web.Models
     public class Track : Model
     {
         [DataMember(Name = "artists")]
-        public IEnumerable<Artist> Artists { get; private set; }
+        public List<Artist> Artists { get; private set; }
         [DataMember(Name = "album")]
         public Album Album { get; set; }
         [DataMember(Name="disc_number")]
