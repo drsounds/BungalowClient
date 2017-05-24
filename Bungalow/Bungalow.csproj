@@ -98,7 +98,35 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="Pages\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spotify\Mockify.cs" />
+    <Compile Include="Spotify\Models\Album.cs" />
+    <Compile Include="Spotify\Models\AlbumList.cs" />
+    <Compile Include="Spotify\Models\AlbumResult.cs" />
+    <Compile Include="Spotify\Models\Artist.cs" />
+    <Compile Include="Spotify\Models\ArtistList.cs" />
+    <Compile Include="Spotify\Models\ArtistResult.cs" />
+    <Compile Include="Spotify\Models\Copyright.cs" />
+    <Compile Include="Spotify\Models\ExternalIds.cs" />
+    <Compile Include="Spotify\Models\ExternalUrls.cs" />
+    <Compile Include="Spotify\Models\Followers.cs" />
+    <Compile Include="Spotify\Models\Genre.cs" />
+    <Compile Include="Spotify\Models\Image.cs" />
+    <Compile Include="Spotify\Models\Model.cs" />
+    <Compile Include="Spotify\Models\ModelList.cs" />
+    <Compile Include="Spotify\Models\Playlist.cs" />
+    <Compile Include="Spotify\Models\PlaylistList.cs" />
+    <Compile Include="Spotify\Models\PlaylistResult.cs" />
+    <Compile Include="Spotify\Models\TrackResult.cs" />
+    <Compile Include="Spotify\Models\Track.cs" />
+    <Compile Include="Spotify\Models\Trackset.cs" />
+    <Compile Include="Spotify\Models\User.cs" />
+    <Compile Include="Spotify\Spotify.cs" />
+    <Compile Include="ViewModel\MainPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -125,12 +153,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\StartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>5.2.3</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>10.0.2</Version>
+    </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

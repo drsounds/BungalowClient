@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Bungalow.Pages;
+using Bungalow.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.RegularExpressions;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +25,26 @@ namespace Bungalow
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public void Navigate(string uri)
+        {
+            if (new Regex("^bungalow:start$").IsMatch(uri))
+            {
+                ViewStack.Navigate(typeof(StartPage));
+            }
+
+        }
         public MainPage()
         {
             this.InitializeComponent();
+            this.ViewModel = new MainPageViewModel();
+            this.Loaded += MainPage_Loaded;
         }
+
+        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            Navigate("bungalow:start");
+        }
+
+        public MainPageViewModel ViewModel { get; private set; }
     }
 }

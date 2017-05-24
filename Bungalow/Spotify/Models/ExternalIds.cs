@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Bungalow.Spotify.Models
 {
     [DataContract]
-    public class ExternalId
+    public class ExternalIds
     {
         [DataMember(Name = "UPC")]
         public string UPC { get; set; }

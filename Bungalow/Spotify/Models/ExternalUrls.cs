@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Bungalow.Spotify.Models
 {
     [DataContract]
-    public class ExternalUrl
+    public class ExternalUrls
     {
         [DataMember(Name="spotify")]
         public string Spotify { get; set; }

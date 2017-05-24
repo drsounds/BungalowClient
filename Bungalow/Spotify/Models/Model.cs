@@ -4,6 +4,7 @@ using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Runtime.Serialization;
+using Bungalow.Spotify.Models;
 
 namespace Spotify.Web.Models
 {
@@ -11,9 +12,9 @@ namespace Spotify.Web.Models
     public class Model
     {
         [DataMember(Name = "external_urls")]
-        public ExternalUrl ExternalUrls { get; set; }
+        public ExternalUrls ExternalUrls { get; set; }
         [DataMember(Name = "external_ids")]
-        public ExternalId ExternalIds { get; set; }
+        public ExternalIds ExternalIds { get; set; }
         [DataMember(Name="uri")]
         public string Uri
         {

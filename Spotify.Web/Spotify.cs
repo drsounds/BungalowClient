@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.IO;
 using System.Collections.Generic;
-using System.Net;
+using System.Web;
 namespace Spotify.Web
 {
     public class Spotify
@@ -14,7 +14,6 @@ namespace Spotify.Web
         }
         private async Task<Stream> Request(string method, string url, Dictionary<string, string> querystring)
         {
-           
         }
     }
 }

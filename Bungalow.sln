@@ -7,14 +7,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bungalow", "Bungalow\Bungal
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|ARM = Release|ARM
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Debug|ARM.ActiveCfg = Debug|ARM
 		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Debug|ARM.Build.0 = Debug|ARM
 		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Debug|ARM.Deploy.0 = Debug|ARM
@@ -24,6 +27,7 @@ Global
 		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Debug|x86.ActiveCfg = Debug|x86
 		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Debug|x86.Build.0 = Debug|x86
 		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Debug|x86.Deploy.0 = Debug|x86
+		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Release|Any CPU.ActiveCfg = Release|x86
 		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Release|ARM.ActiveCfg = Release|ARM
 		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Release|ARM.Build.0 = Release|ARM
 		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Release|ARM.Deploy.0 = Release|ARM
