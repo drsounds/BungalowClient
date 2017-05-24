@@ -9,16 +9,19 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <SplitView OpenPaneLength="300" IsPaneOpen="True" DisplayMode="Inline" CompactPaneLength="10" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <SplitView OpenPaneLength="220" IsPaneOpen="True" DisplayMode="Inline" CompactPaneLength="10" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         
         <SplitView.Pane>
-            <ListView ItemsSource="{x:Bind ViewModel.MenuItems}">
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="bungalow:MenuItem">
-                        <TextBlock Text="{x:Bind Text}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <StackPanel Padding="12">
+                <TextBox PlaceholderText="Search" KeyDown="TextBox_KeyDown" />
+                <ListView ItemsSource="{x:Bind ViewModel.MenuItems}" SelectionChanged="ListView_SelectionChanged" ItemClick="ListView_ItemClick">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="bungalow:MenuItem">
+                            <TextBlock Text="{x:Bind Text}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
         </SplitView.Pane>
         <SplitView.Content>
             <Frame Name="ViewStack"></Frame>

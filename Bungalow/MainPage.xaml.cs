@@ -1,4 +1,5 @@
-﻿using Bungalow.Pages;
+﻿using Bungalow.Models;
+using Bungalow.Pages;
 using Bungalow.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -27,11 +28,26 @@ namespace Bungalow
     {
         public void Navigate(string uri)
         {
+            if (uri.StartsWith("spotify:"))
+            {
+                uri = "bungalow:" + uri.Substring("spotify:".Length);
+            }
+            if (!uri.StartsWith("bungalow:"))
+            {
+                uri = "bungalow:search:" + uri;
+            }
             if (new Regex("^bungalow:start$").IsMatch(uri))
             {
                 ViewStack.Navigate(typeof(StartPage));
             }
-
+            else if (new Regex("^bungalow:user:([a-zA-Z0-9]+)$").IsMatch(uri))
+            {
+                ViewStack.Navigate(typeof(UserPage), uri);
+            }
+            else if (new Regex("^bungalow:album:([a-zA-Z0-9]+)$").IsMatch(uri))
+            {
+                ViewStack.Navigate(typeof(AlbumPage), uri);
+            }
         }
         public MainPage()
         {
@@ -46,5 +62,27 @@ namespace Bungalow
         }
 
         public MainPageViewModel ViewModel { get; private set; }
+
+        private void TextBox_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter)
+            {
+                Navigate(((TextBox)sender).Text);
+            }
+
+        }
+
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+           
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count < 1) return;
+            var item = (MenuItem)e.AddedItems[0];
+            Navigate(item.Uri);
+
+        }
     }
 }

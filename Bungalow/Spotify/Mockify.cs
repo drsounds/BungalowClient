@@ -84,6 +84,23 @@ namespace Spotify.Web
                 AlbumType = "album",
             };
         }
+        public Album GetAlbumById(string id)
+        {
+            return new Album
+            {
+                Uri = "spotify:album:6sFyn9bcvCqdzs7ULVzAER",
+                Id = "6sFyn9bcvCqdzs7ULVzAER",
+                Name = "Vincero",
+                Type = "album",
+                AlbumType = "album",
+                Tracks = new Trackset
+                {
+                    Items = {
+                        GetTrack()
+                    }
+                }
+            };
+        }
         public Track GetTrack()
         {
             return new Track
