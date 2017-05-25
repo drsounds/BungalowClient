@@ -18,6 +18,13 @@ namespace Spotify.Web.Models
             Artists = new List<Artist>();
 
         }
+        public string Artist
+        {
+            get
+            {
+                return String.Join(" • ", this.Artists.Select(a => a.Name));
+            }
+        }
         [DataMember(Name="album_type")]
         public string AlbumType { get; set; }
         [DataMember(Name = "artists")]

@@ -4,31 +4,21 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Bungalow.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:bungalow="using:Bungalow.Controls"
     xmlns:spotify="using:Spotify.Web.Models"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:vm="using:Bungalow.ViewModel"
     mc:Ignorable="d">
     <ScrollViewer>
-        <StackPanel Padding="10" Orientation="Vertical" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <bungalow:Header Data="{x:Bind ViewModel.Artist}" />
-            <Hub DataContext="{x:Bind ViewModel}">
-                <HubSection x:Name="TestHub" Header="Albums">
-                    <DataTemplate x:DataType="vm:ArtistPageViewModel">
-                        <GridView ItemsSource="{x:Bind Albums.Items}">
-                            <GridView.ItemTemplate>
-                                <DataTemplate x:DataType="spotify:Album">
-                                    <StackPanel Orientation="Vertical" Padding="10">
-                                        <controls:ImageEx Width="128" Height="128" Source="{x:Bind ImageUrl}" />
-                                        <TextBlock Text="{x:Bind Name}" TextWrapping="Wrap" />
-                                    </StackPanel>
-                                </DataTemplate>
-                            </GridView.ItemTemplate>
-                        </GridView>
-                    </DataTemplate>
-                </HubSection>
-            </Hub>
+        <StackPanel Orientation="Vertical" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <StackPanel Padding="28">
+                <bungalow:Header Padding="10" Data="{x:Bind ViewModel.Artist}" />
+            </StackPanel>
+            <bungalow:ChartControl Chart="{x:Bind ViewModel.Chart}" />
+            <TextBlock Padding="28" Text="Albums" />
+            <bungalow:AlbumContext Albums="{x:Bind ViewModel.Albums}" />
         </StackPanel>
     </ScrollViewer>
 </Page>

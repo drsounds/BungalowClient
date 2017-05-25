@@ -10,18 +10,10 @@
     mc:Ignorable="d">
     <ScrollViewer>
         <StackPanel Padding="20" x:Name="StackPanel" DataContext="{Binding ViewModel}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            
             <bungalow:Header Data="{x:Bind ViewModel.Album}" Width="Auto" Height="128" />
-
-            <ListView ItemsSource="{x:Bind ViewModel.Album.Tracks.Items}">
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="spotify:Track">
-                        <StackPanel>
-                            <TextBlock Text="{x:Bind Name}" />
-                            <TextBlock FontSize="10" Text="{x:Bind Artist}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+          
+            <bungalow:TrackContext Tracks="{x:Bind ViewModel.Album.Tracks}" />
         </StackPanel>
     </ScrollViewer>
 </Page>

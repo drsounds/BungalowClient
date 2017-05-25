@@ -59,6 +59,10 @@ namespace Bungalow
             {
                 ViewStack.Navigate(typeof(AlbumPage), uri);
             }
+            else if (new Regex("^bungalow:search:(.*)$").IsMatch(uri))
+            {
+                ViewStack.Navigate(typeof(SearchPage), uri);
+            }
         }
         public MainPage()
         {

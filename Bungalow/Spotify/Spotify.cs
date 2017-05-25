@@ -55,9 +55,42 @@ namespace Spotify.Web
             }
             return a;
         }
+        
         public async Task<Artist> GetArtistById(string id)
         {
             return await RequestResource<Artist>("GET", "/artists/" + id);
+        }
+        public async Task<Trackset> FindTracks(string query)
+        {
+            return await RequestResource<Trackset>("GET", "/search?q=" + query + "&type=track");
+
+        }
+        public async Task<Search> Search(string query)
+        {
+            return await RequestResource<Search>("GET", "/search?q=" + query + "&type=artist,track,album");
+
+        }
+        public async Task<ArtistList> FindArtists(string query)
+        {
+            return await RequestResource<ArtistList>("GET", "/search?q=" + query + "&type=artist");
+
+        }
+        public async Task<AlbumList> FindAlbums(string query)
+        {
+            return await RequestResource<AlbumList>("GET", "/searc/?q=" + query + "&type=album");
+
+        }
+        public async Task<Chart> GetChartForArtist(string id)
+        {
+            Artist artist = await GetArtistById(id);
+            Chart chart = await RequestResource<Chart>("GET", "/artists/" + id + "/top-tracks?country=se");
+            chart.For = artist;
+            chart.Name = "Top Tracks";
+            chart.Images.Add(new Image
+            {
+                Url = "https://sporal-drsounds.c9users.io/themes/spotify09/images/toplist.png"
+            });
+            return chart;
         }
         public async Task<Album> GetAlbumById(string id)
         {

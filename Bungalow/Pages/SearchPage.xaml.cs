@@ -1,5 +1,4 @@
-﻿using Bungalow.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,23 +20,21 @@ namespace Bungalow.Pages
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ArtistPage : Page
+    public sealed partial class SearchPage : Page
     {
-        public ArtistPageViewModel ViewModel { get; set; }
-        public ArtistPage()
+        public ViewModel.SearchPageViewModel ViewModel { get; set; }
+        public SearchPage()
         {
             this.InitializeComponent();
-            
         }
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             string uri = (string)e.Parameter;
-            string identifier = uri.Split(':')[2];
-            ViewModel = new ArtistPageViewModel
+            string query = uri.Substring("bungalow:search:".Length);
+            ViewModel = new Bungalow.ViewModel.SearchPageViewModel
             {
-                Artist = await ((App)App.Current).Spotify.GetArtistById(identifier),
-                Albums = await ((App)App.Current).Spotify.GetAlbumsByArtist(identifier),
-                Chart = await ((App)App.Current).Spotify.GetChartForArtist(identifier)
+                Query = query,
+                Search = await ((App)App.Current).Spotify.Search(query)
             };
             Bindings.Update();
         }
