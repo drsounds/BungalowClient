@@ -15,6 +15,6 @@ namespace Spotify.Web.Models
         [DataMember(Name = "artists")]
         public ArtistList Artists { get; set; }
         [DataMember(Name = "albums")]
-        public Album Albums { get; set; }
+        public AlbumList Albums { get; set; }
     }
 }

@@ -21,7 +21,7 @@
                             <GridView.ItemTemplate>
                                 <DataTemplate x:DataType="spotify:Artist">
                                     <StackPanel Orientation="Vertical">
-                                        <controls:ImageEx Source="{x:Bind ImageUrl}" />
+                                        <controls:ImageEx Width="64" Height="64" Source="{x:Bind ImageUrl}" />
                                         <TextBlock Text="{x:Bind Name}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
@@ -35,7 +35,7 @@
                             <GridView.ItemTemplate>
                                 <DataTemplate x:DataType="spotify:Album">
                                     <StackPanel Orientation="Vertical">
-                                        <controls:ImageEx Source="{x:Bind ImageUrl}" />
+                                        <controls:ImageEx Width="64" Height="64" Source="{x:Bind ImageUrl}" />
                                         <TextBlock Text="{x:Bind Name}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
