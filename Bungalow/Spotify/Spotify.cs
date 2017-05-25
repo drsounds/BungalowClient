@@ -37,8 +37,6 @@ namespace Spotify.Web
             return session;
         }
         public async Task<T> RequestResource<T>(string method, string url, object payload = null)
-
-
         {
             HttpWebRequest hwr = WebRequest.CreateHttp("https://api.spotify.com/v1" + url);
             hwr.Headers["Authorization"] = "Bearer " + Session.AccessToken;
