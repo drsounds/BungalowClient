@@ -12,6 +12,6 @@
 
     <StackPanel Orientation="Vertical" Width="128">
         <controls:ImageEx Width="128" Height="128" Source="{x:Bind Model.ImageUrl}" />
-        <TextBlock Text="{x:Bind Model.Name}" />
+        <TextBlock Text="{x:Bind Model.Name}" MaxWidth="128" FontSize="8" />
     </StackPanel>
 </UserControl>

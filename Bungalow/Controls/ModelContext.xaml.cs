@@ -18,23 +18,24 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Bungalow.Controls
 {
-    public sealed partial class PlaylistContext : UserControl
+    public sealed partial class ModelContext : UserControl
     {
-        public PlaylistContext()
+        public ModelContext()
         {
             this.InitializeComponent();
         }
 
 
-        public PlaylistList Playlists
+        public ModelList<Model> Models
         {
-            get { return (PlaylistList)GetValue(PlaylistsProperty); }
-            set { SetValue(PlaylistsProperty, value); Bindings.Update(); }
+            get { return (ModelList<Model>)GetValue(ModelProperty); }
+            set { SetValue(ModelProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for Playlists.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty PlaylistsProperty =
-            DependencyProperty.Register("Playlists", typeof(PlaylistList), typeof(PlaylistList), new PropertyMetadata(null));
+        // Using a DependencyProperty as the backing store for Model.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ModelProperty =
+            DependencyProperty.Register("Models", typeof(ModelList<Model>), typeof(ModelList<Model>), new PropertyMetadata(null));
+
 
         private void GridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

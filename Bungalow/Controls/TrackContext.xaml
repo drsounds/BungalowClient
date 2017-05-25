@@ -21,14 +21,14 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>-->
-    <mt:DataGrid ItemsSource="{x:Bind Tracks.Items}">
+    <mt:DataGrid ItemsSource="{x:Bind Tracks.Items}" RowBackgroundEvenBrush="Transparent" RowBackgroundOddBrush="Transparent" >
         <mt:DataGrid.Columns>
             <mt:DataGridTextColumn Width="200" Header="Title" 
                   Binding="{Binding Name}" />
             <mt:DataGridTextColumn Width="200" Header="Artists" 
                   Binding="{Binding Artist}" />
-            <mt:DataGridTextColumn Width="200" Header="Artists" 
-                  Binding="{Binding Album}" />
+            <mt:DataGridTextColumn Width="200" Header="Album" 
+                  Binding="{Binding Album.Name}" />
         </mt:DataGrid.Columns>
     </mt:DataGrid>
 </UserControl>

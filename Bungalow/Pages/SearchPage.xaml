@@ -11,31 +11,14 @@
     xmlns:vm="using:Bungalow.ViewModel"
     mc:Ignorable="d">
     <ScrollViewer>
-        <StackPanel Padding="28" Orientation="Vertical">
+        <StackPanel Orientation="Vertical">
             <TextBlock Text="{x:Bind ViewModel.Search.Name}" />
             <TextBlock Text="Artists" />
-            <GridView ItemsSource="{x:Bind ViewModel.Search.Artists.Items}" SelectionChanged="GridView_SelectionChanged">
-                <GridView.ItemTemplate>
-                    <DataTemplate x:DataType="spotify:Artist">
-                        <StackPanel Orientation="Vertical">
-                            <controls:ImageEx Width="64" Height="64" Source="{x:Bind ImageUrl}" />
-                            <TextBlock Text="{x:Bind Name}"></TextBlock>
-                        </StackPanel>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-            </GridView>
+            <bungalow:ArtistContext Artists="{x:Bind ViewModel.Search.Artists}" />
             <TextBlock Text="Albums" />
-        
-            <GridView ItemsSource="{x:Bind ViewModel.Search.Albums.Items}" SelectionChanged="GridView_SelectionChanged">
-                <GridView.ItemTemplate>
-                    <DataTemplate x:DataType="spotify:Album">
-                        <StackPanel Orientation="Vertical">
-                            <controls:ImageEx Width="64" Height="64" Source="{x:Bind ImageUrl}" />
-                            <TextBlock Text="{x:Bind Name}"></TextBlock>
-                        </StackPanel>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-            </GridView>
+
+            <bungalow:AlbumContext  Albums="{x:Bind ViewModel.Search.Albums}" />
+
             <TextBlock Text="Tracks" />
             <bungalow:TrackContext Tracks="{x:Bind ViewModel.Search.Tracks}" />
         </StackPanel>

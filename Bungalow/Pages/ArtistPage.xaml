@@ -4,7 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Bungalow.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:bungalow="using:Bungalow.Controls"
     xmlns:spotify="using:Spotify.Web.Models"
@@ -14,17 +13,11 @@
     <ScrollViewer>
         <StackPanel Orientation="Vertical" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <StackPanel Padding="28">
-                <bungalow:Header Padding="10" Data="{x:Bind ViewModel.Artist}" />
+                <bungalow:Header Data="{x:Bind ViewModel.Artist}" />
             </StackPanel>
             <bungalow:ChartControl Chart="{x:Bind ViewModel.Chart}" />
             <TextBlock Padding="28" Text="Albums" />
-            <GridView>
-                <GridView.ItemTemplate>
-                    <DataTemplate x:DataType="spotify:Album">
-                        <bungalow:CoverControl Model="{x:Bind}" />
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-            </GridView>
+            <bungalow:AlbumContext Albums="{x:Bind ViewModel.Albums}" />
         </StackPanel>
     </ScrollViewer>
 </Page>

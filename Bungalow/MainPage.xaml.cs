@@ -29,6 +29,7 @@ namespace Bungalow
         public static MainPage Current;
         public void Navigate(string uri)
         {
+           
             if (uri.StartsWith("#"))
             {
                 uri = "bungalow:hashtag:" + uri.Substring(1);
@@ -42,12 +43,16 @@ namespace Bungalow
                 uri = "bungalow:" + uri.Substring("spotify:".Length);
             }
 
-            
             if (!uri.StartsWith("bungalow:"))
             {
                 uri = "bungalow:search:" + uri;
             }
-            if (uri == "bungalow:featured")
+
+            if (new Regex("^bungalow:user:([a-zA-Z0-9._-]+):playlist:([a-zA-Z0-9]+)").IsMatch(uri))
+            {
+                ViewStack.Navigate(typeof(PlaylistPage), uri);
+            }
+            else if (uri == "bungalow:featured")
             {
                 ViewStack.Navigate(typeof(SearchPage), "bungalow:search:tag:featured");
 
@@ -69,6 +74,9 @@ namespace Bungalow
             else if (new Regex("^bungalow:album:([a-zA-Z0-9]+)$").IsMatch(uri))
             {
                 ViewStack.Navigate(typeof(AlbumPage), uri);
+            } else if (new Regex("^bungalow:year:(.*)$").IsMatch(uri))
+            {
+                ViewStack.Navigate(typeof(SearchPage), "bungalow:search:year:" + uri.Substring("bungalow:year:".Length));
             }
             else if (new Regex("^bungalow:search:(.*)$").IsMatch(uri))
             {

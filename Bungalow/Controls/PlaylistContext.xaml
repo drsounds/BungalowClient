@@ -10,12 +10,11 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <ListView ItemsSource="{x:Bind Playlists.Items}">
-
-        <ListView.ItemTemplate>
+    <GridView ItemsSource="{x:Bind Playlists.Items}" SelectionChanged="GridView_SelectionChanged">
+        <GridView.ItemTemplate>
             <DataTemplate x:DataType="spotify:Playlist">
-                <bungalow:PlaylistControl Playlist="{x:Bind}" />
+                <bungalow:CoverControl Model="{x:Bind}" />
             </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+        </GridView.ItemTemplate>
+    </GridView>
 </UserControl>

@@ -101,6 +101,9 @@
     <Compile Include="Controls\AlbumControl.xaml.cs">
       <DependentUpon>AlbumControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ArtistContext.xaml.cs">
+      <DependentUpon>ArtistContext.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ChartControl.xaml.cs">
       <DependentUpon>ChartControl.xaml</DependentUpon>
     </Compile>
@@ -109,6 +112,9 @@
     </Compile>
     <Compile Include="Controls\Header.xaml.cs">
       <DependentUpon>Header.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ModelContext.xaml.cs">
+      <DependentUpon>ModelContext.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\PlaylistContext.xaml.cs">
       <DependentUpon>PlaylistContext.xaml</DependentUpon>
@@ -131,6 +137,9 @@
     </Compile>
     <Compile Include="Pages\ArtistPage.xaml.cs">
       <DependentUpon>ArtistPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PlaylistPage.xaml.cs">
+      <DependentUpon>PlaylistPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SearchPage.xaml.cs">
       <DependentUpon>SearchPage.xaml</DependentUpon>
@@ -172,6 +181,7 @@
     <Compile Include="ViewModel\AlbumPageViewModel.cs" />
     <Compile Include="ViewModel\ArtistPageViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
+    <Compile Include="ViewModel\PlaylistViewModel.cs" />
     <Compile Include="ViewModel\SearchPageViewModel.cs" />
     <Compile Include="ViewModel\StartPageViewModel.cs" />
     <Compile Include="ViewModel\UserPageViewModel.cs" />
@@ -207,6 +217,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\ArtistContext.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\ChartControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -216,6 +230,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Header.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ModelContext.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -244,6 +262,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ArtistPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PlaylistPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

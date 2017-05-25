@@ -38,11 +38,16 @@ namespace Bungalow.Controls
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+        }
+
+        private void GridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
             if (e.AddedItems.Count < 1) return;
             Model model = (Model)e.AddedItems[0];
 
             MainPage.Current.Navigate(model.Uri);
+
         }
     }
 }
