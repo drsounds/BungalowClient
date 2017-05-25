@@ -135,6 +135,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Spotify\Mockify.cs" />
     <Compile Include="Spotify\Models\Chart.cs" />
+    <Compile Include="Spotify\Models\Country.cs" />
     <Compile Include="Spotify\Models\Search.cs" />
     <Compile Include="Spotify\Models\Session.cs" />
     <Compile Include="Spotify\Models\Album.cs" />

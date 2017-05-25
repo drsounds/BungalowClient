@@ -55,6 +55,10 @@ namespace Bungalow
             {
                 ViewStack.Navigate(typeof(ArtistPage), uri);
             }
+            else if (new Regex("^bungalow:country:([a-zA-Z0-9]+)$").IsMatch(uri))
+            {
+                ViewStack.Navigate(typeof(SearchPage), "bungalow:search:country:" + uri.Split(':')[2]);
+            }
             else if (new Regex("^bungalow:user:([a-zA-Z0-9]+)$").IsMatch(uri))
             {
                 ViewStack.Navigate(typeof(UserPage), uri);

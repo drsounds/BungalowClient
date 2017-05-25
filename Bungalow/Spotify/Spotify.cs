@@ -67,6 +67,7 @@ namespace Spotify.Web
         }
         public async Task<Search> Search(string query)
         {
+           
             if (query == "tag:featured")
             {
                 return new Search
@@ -115,10 +116,24 @@ namespace Spotify.Web
                     }
                 };
             }
+            if (query == "country:qi")
+            {
+                query = "artist:'Dr. Sounds'";
+            }
             Search search =  await RequestResource<Search>("GET", "/search?q=" + query + "&type=artist,track,album");
             search.Name = "Search results for '" + query + "'";
-            
+            if (query.StartsWith("country:"))
+            {
+                search.Name = query.Split(':')[1];
+                search.Type = "country";
+            }
             return search;
+        }
+
+        public async Task<Country> GetCountries(string country)
+        {
+            return await RequestResource<Country>("GET", "/search?q=country:" + country + "&type=artist");
+
         }
         public async Task<ArtistList> FindArtists(string query)
         {
