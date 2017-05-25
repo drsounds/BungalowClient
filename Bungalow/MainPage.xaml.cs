@@ -40,7 +40,7 @@ namespace Bungalow
             {
                 uri = "bungalow:search:" + uri;
             }
-            else if (uri == "bungalow:featured")
+            if (uri == "bungalow:featured")
             {
                 ViewStack.Navigate(typeof(SearchPage), "bungalow:search:tag:featured");
 
