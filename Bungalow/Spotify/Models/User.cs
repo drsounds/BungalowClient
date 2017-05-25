@@ -11,6 +11,9 @@ namespace Spotify.Web.Models
     [DataContract]
     public class User : Model
     {
-   
+        [DataMember(Name = "display_name")]
+        public string DisplayName { get; set; }
+        [DataMember(Name = "followers")]
+        public Followers Followers { get; set; }
     }
 }

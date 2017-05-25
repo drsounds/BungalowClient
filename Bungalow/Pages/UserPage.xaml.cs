@@ -31,19 +31,16 @@ namespace Bungalow.Pages
             ViewModel = new UserPageViewModel();
            
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             string uri = (string)e.Parameter;
             string id = uri.Split(':')[2];
             ViewModel = new UserPageViewModel()
             {
-                User = new User
-                {
-                    Id = id,
-                    Name = id,
-                    Uri = uri
-                }
+                User = await ((App)App.Current).Spotify.GetUserById(id),
+                Playlists = await ((App)App.Current).Spotify.GetPlaylistsByUser(id)
             };
+            Bindings.Update();
         }
     }
 }

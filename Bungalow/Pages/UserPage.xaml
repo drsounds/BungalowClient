@@ -5,10 +5,16 @@
     xmlns:local="using:Bungalow.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:bungalow="using:Bungalow.Controls"
+    xmlns:spotify="using:Spotify.Web.Models"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d">
  
     <StackPanel Padding="28" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="User"></TextBlock>
-        <TextBlock Text="{x:Bind ViewModel.User.Id}"></TextBlock>
+        <bungalow:Header Data="{x:Bind ViewModel.User}" />
+        <TextBlock Text="Public playlists" />
+        <VariableSizedWrapGrid>
+            <Data
+        </VariableSizedWrapGrid>
     </StackPanel>
 </Page>

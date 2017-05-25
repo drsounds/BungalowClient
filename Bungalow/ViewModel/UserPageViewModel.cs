@@ -10,5 +10,6 @@ namespace Bungalow.ViewModel
     public class UserPageViewModel
     {
         public User User { get; set; }
+        public PlaylistList Playlists { get; set; }
     }
 }

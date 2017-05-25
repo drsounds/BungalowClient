@@ -15,7 +15,7 @@
  
         <StackPanel Padding="2" Orientation="Vertical">
             <TextBlock x:Name="ContentType" Text="{x:Bind Data.Type}" />
-            <TextBlock FontSize="28" Text="{x:Bind Data.Name}" Margin="0 0 0 28" />
+            <TextBlock FontSize="28" Text="{x:Bind Data.Name}" Margin="0 0 0 0" />
             <StackPanel Orientation="Horizontal">
                 <Button>Play</Button>
                 <Button>...</Button>

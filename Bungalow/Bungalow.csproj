@@ -107,6 +107,12 @@
     <Compile Include="Controls\Header.xaml.cs">
       <DependentUpon>Header.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PlaylistContext.xaml.cs">
+      <DependentUpon>PlaylistContext.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlaylistControl.xaml.cs">
+      <DependentUpon>PlaylistControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\TrackContext.xaml.cs">
       <DependentUpon>TrackContext.xaml</DependentUpon>
     </Compile>
@@ -203,6 +209,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Header.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PlaylistContext.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PlaylistControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

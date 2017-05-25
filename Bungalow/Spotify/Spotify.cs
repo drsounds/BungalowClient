@@ -65,6 +65,10 @@ namespace Spotify.Web
             return await RequestResource<Trackset>("GET", "/search?q=" + query + "&type=track");
 
         }
+        public async Task<PlaylistList> GetPlaylistsByUser(string userId)
+        {
+            return await RequestResource<PlaylistList>("GET", "/users/" + userId + "/playlists");
+        }
         public async Task<Search> Search(string query)
         {
             if (query == "tag:featured")
