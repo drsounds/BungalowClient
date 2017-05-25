@@ -18,7 +18,13 @@
             </StackPanel>
             <bungalow:ChartControl Chart="{x:Bind ViewModel.Chart}" />
             <TextBlock Padding="28" Text="Albums" />
-            <bungalow:AlbumContext Albums="{x:Bind ViewModel.Albums}" />
+            <GridView>
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="spotify:Album">
+                        <bungalow:CoverControl Model="{x:Bind}" />
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
         </StackPanel>
     </ScrollViewer>
 </Page>

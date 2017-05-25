@@ -27,9 +27,16 @@ namespace Bungalow
     public sealed partial class MainPage : Page
     {
         public static MainPage Current;
-        public async void Navigate(string uri)
+        public void Navigate(string uri)
         {
-            
+            if (uri.StartsWith("#"))
+            {
+                uri = "bungalow:hashtag:" + uri.Substring(1);
+            }
+            if (uri.StartsWith("@"))
+            {
+                uri = "bungalow:user:" + uri.Substring(1);
+            }
             if (uri.StartsWith("spotify:"))
             {
                 uri = "bungalow:" + uri.Substring("spotify:".Length);
@@ -78,7 +85,7 @@ namespace Bungalow
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            Navigate("spotify:artist:2FOROU2Fdxew72QmueWSUy");
+            Navigate("bungalow:user:drsounds");
         }
 
         public MainPageViewModel ViewModel { get; private set; }

@@ -9,12 +9,17 @@
     xmlns:spotify="using:Spotify.Web.Models"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d">
- 
-    <StackPanel Padding="28" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <bungalow:Header Data="{x:Bind ViewModel.User}" />
-        <TextBlock Text="Public playlists" />
-        <VariableSizedWrapGrid>
-            <Data
-        </VariableSizedWrapGrid>
-    </StackPanel>
+    <ScrollViewer>
+        <StackPanel Padding="28" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <bungalow:Header Data="{x:Bind ViewModel.User}" />
+            <TextBlock Text="Public playlists" />
+            <GridView ItemsSource="{x:Bind ViewModel.Playlists.Items}" >
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="spotify:Playlist">
+                        <bungalow:CoverControl Model="{x:Bind}" />
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </StackPanel>
+    </ScrollViewer>
 </Page>
