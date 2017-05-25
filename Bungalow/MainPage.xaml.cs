@@ -47,6 +47,10 @@ namespace Bungalow
             {
                 ViewStack.Navigate(typeof(StartPage));
             }
+            else if (new Regex("^bungalow:artist:([a-zA-Z0-9]+)$").IsMatch(uri))
+            {
+                ViewStack.Navigate(typeof(ArtistPage), uri);
+            }
             else if (new Regex("^bungalow:user:([a-zA-Z0-9]+)$").IsMatch(uri))
             {
                 ViewStack.Navigate(typeof(UserPage), uri);
@@ -65,7 +69,7 @@ namespace Bungalow
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            Navigate("spotify:album:0s4ZLWPmhBUnHYOGWdhrLv");
+            Navigate("spotify:artist:2FOROU2Fdxew72QmueWSUy");
         }
 
         public MainPageViewModel ViewModel { get; private set; }

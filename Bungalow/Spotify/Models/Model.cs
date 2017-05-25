@@ -10,10 +10,25 @@ namespace Spotify.Web.Models
     [DataContract]
     public class Model
     {
+        public Model()
+        {
+            Images = new List<Image>();
+        }
+        public string ImageUrl
+        {
+            get
+            {
+                if (Images != null && Images.Count > 0)
+                return Images[0].Url;
+                return "";
+            }
+        }
         [DataMember(Name = "external_urls")]
         public ExternalUrls ExternalUrls { get; set; }
         [DataMember(Name = "external_ids")]
         public ExternalIds ExternalIds { get; set; }
+        [DataMember(Name = "images")]
+        public List<Image> Images { get; set; }
         [DataMember(Name="uri")]
         public string Uri
         {

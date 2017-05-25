@@ -1,5 +1,4 @@
 ﻿using Bungalow.ViewModel;
-using Spotify.Web;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,22 +21,22 @@ namespace Bungalow.Pages
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AlbumPage : Page
+    public sealed partial class ArtistPage : Page
     {
-        public AlbumPageViewModel ViewModel { get; set; }
-        public Mockify Mockify { get; private set; }
-
-        public AlbumPage()
+        public ArtistPageViewModel ViewModel { get; set; }
+        public ArtistPage()
         {
             this.InitializeComponent();
+            
         }
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             string uri = (string)e.Parameter;
-            string id = uri.Split(':')[2];
-            ViewModel = new AlbumPageViewModel()
+            string identifier = uri.Split(':')[2];
+            ViewModel = new ArtistPageViewModel
             {
-                Album = await ((App)App.Current).Spotify.GetAlbumById(id)
+                Artist = await ((App)App.Current).Spotify.GetArtistById(identifier),
+                Albums = await ((App)App.Current).Spotify.GetAlbumsByArtist(identifier)
             };
             Bindings.Update();
         }

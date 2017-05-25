@@ -14,5 +14,7 @@ namespace Spotify.Web.Models
         public int Height { get; set; }
         [DataMember(Name="width")]
         public int Width { get; set; }
+        [DataMember(Name = "url")]
+        public string Url { get; set; }
     }
 }

@@ -64,6 +64,10 @@ namespace Spotify.Web
             return await RequestResource<Album>("GET", "/albums/" + id);
             
         }
+        public async Task<AlbumList> GetAlbumsByArtist(string id)
+        {
+            return await RequestResource<AlbumList>("GET", "/artists/" + id + "/albums");
+        }
         public async Task<User> GetUserById(string id)
         {
             return await RequestResource<User>("GET", "/users/" + id);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -8,6 +9,13 @@ namespace Spotify.Web.Models
     [DataContract]
     public class Track : Model
     {
+        public string Artist
+        {
+            get
+            {
+                return String.Join(" • ", this.Artists.Select(a => a.Name));
+            }
+        }
         public Track()
         {
             Artists = new List<Artist>();

@@ -13,10 +13,10 @@ namespace Spotify.Web.Models
         public Album()
         {
             Tracks = new Trackset();
-            Images = new List<Image>();
             Genres = new List<Genre>();
             Copyrights = new List<Copyright>();
             Artists = new List<Artist>();
+
         }
         [DataMember(Name="album_type")]
         public string AlbumType { get; set; }
@@ -32,8 +32,6 @@ namespace Spotify.Web.Models
         public List<Copyright> Copyrights {get;set;}
         [DataMember(Name = "genres")]
         public List<Genre> Genres { get; set; }
-        [DataMember(Name="images")]
-        public List<Image> Images { get; set; }
         [DataMember(Name="tracks")]
         public Trackset Tracks { get; set; }
     }
