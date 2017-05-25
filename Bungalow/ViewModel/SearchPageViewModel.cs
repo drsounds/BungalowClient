@@ -9,6 +9,7 @@ namespace Bungalow.ViewModel
 {
     public class SearchPageViewModel
     {
+        public string Name { get; set; }
         public string Query { get; set; }
         public Search Search { get; set; }
     }

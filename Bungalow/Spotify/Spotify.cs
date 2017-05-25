@@ -67,8 +67,58 @@ namespace Spotify.Web
         }
         public async Task<Search> Search(string query)
         {
-            return await RequestResource<Search>("GET", "/search?q=" + query + "&type=artist,track,album");
+            if (query == "tag:featured")
+            {
+                return new Search
+                {
+                    Name = "Featured",
+                    Albums = new AlbumList
+                    {
+                        Items = {
+                            new Album
+                            {
+                                Name = "Swimming",
+                                Uri = "spotify:album:6Ryu2lM1IDjb5DzVMiXOMg",
+                                Id = "6Ryu2lM1IDjb5DzVMiXOMg",
+                                Type = "album",
+                                Artists =
+                                {
+                                    new Artist
+                                    {
+                                        Name = "Dr. Sounds",
+                                        Uri = "spotify:artist:2FOROU2Fdxew72QmueWSUy",
+                                        Id = "2FOROU2Fdxew72QmueWSUy",
+                                        Type = "artist"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    Tracks = new Trackset
+                    {
+                        Items =
+                        {
 
+                        }
+                    },
+                    Artists = new ArtistList
+                    {
+                        Items = {
+                            new Artist
+                            {
+                                Name = "Dr. Sounds",
+                                Uri = "spotify:artist:2FOROU2Fdxew72QmueWSUy",
+                                Id = "2FOROU2Fdxew72QmueWSUy",
+                                Type = "artist"
+                            }
+                        }
+                    }
+                };
+            }
+            Search search =  await RequestResource<Search>("GET", "/search?q=" + query + "&type=artist,track,album");
+            search.Name = "Search results for '" + query + "'";
+            
+            return search;
         }
         public async Task<ArtistList> FindArtists(string query)
         {

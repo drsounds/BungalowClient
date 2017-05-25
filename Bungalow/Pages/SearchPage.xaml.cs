@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spotify.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,10 +34,20 @@ namespace Bungalow.Pages
             string query = uri.Substring("bungalow:search:".Length);
             ViewModel = new Bungalow.ViewModel.SearchPageViewModel
             {
+                Name = "Search results for '" + query + "'",
                 Query = query,
                 Search = await ((App)App.Current).Spotify.Search(query)
             };
             Bindings.Update();
+        }
+
+        private void GridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count < 1) return;
+            Model  model = (Model)e.AddedItems[0];
+            
+            MainPage.Current.Navigate(model.Uri);
+
         }
     }
 }

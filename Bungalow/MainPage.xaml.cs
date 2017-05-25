@@ -26,6 +26,7 @@ namespace Bungalow
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public static MainPage Current;
         public async void Navigate(string uri)
         {
             
@@ -39,8 +40,11 @@ namespace Bungalow
             {
                 uri = "bungalow:search:" + uri;
             }
+            else if (uri == "bungalow:featured")
+            {
+                ViewStack.Navigate(typeof(SearchPage), "bungalow:search:tag:featured");
 
-            if (uri == "bungalow:internal:login")
+            } else if (uri == "bungalow:internal:login")
             {
                 
             } else if (new Regex("^bungalow:start$").IsMatch(uri))
@@ -69,6 +73,7 @@ namespace Bungalow
             this.InitializeComponent();
             this.ViewModel = new MainPageViewModel();
             this.Loaded += MainPage_Loaded;
+            Current = this;
         }
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
