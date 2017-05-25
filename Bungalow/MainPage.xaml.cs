@@ -26,17 +26,24 @@ namespace Bungalow
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public void Navigate(string uri)
+        public async void Navigate(string uri)
         {
+            
             if (uri.StartsWith("spotify:"))
             {
                 uri = "bungalow:" + uri.Substring("spotify:".Length);
             }
+
+            
             if (!uri.StartsWith("bungalow:"))
             {
                 uri = "bungalow:search:" + uri;
             }
-            if (new Regex("^bungalow:start$").IsMatch(uri))
+
+            if (uri == "bungalow:internal:login")
+            {
+                
+            } else if (new Regex("^bungalow:start$").IsMatch(uri))
             {
                 ViewStack.Navigate(typeof(StartPage));
             }
@@ -58,7 +65,7 @@ namespace Bungalow
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            Navigate("bungalow:start");
+            Navigate("spotify:album:0s4ZLWPmhBUnHYOGWdhrLv");
         }
 
         public MainPageViewModel ViewModel { get; private set; }

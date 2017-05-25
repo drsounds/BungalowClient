@@ -27,7 +27,7 @@ namespace Spotify.Web.Models
         [DataMember(Name = "label")]
         public string Label { get; set; }
         [DataMember(Name = "release_date")]
-        public DateTime ReleaseDate { get; set; }
+        public string ReleaseDate { get; set; }
         [DataMember(Name = "copyrights")]
         public List<Copyright> Copyrights {get;set;}
         [DataMember(Name = "genres")]

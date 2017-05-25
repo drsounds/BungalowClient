@@ -22,6 +22,7 @@ namespace Bungalow
     /// </summary>
     sealed partial class App : Application
     {
+        public Spotify.Web.Spotify Spotify { get; set; }
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -30,6 +31,7 @@ namespace Bungalow
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            Spotify = new Spotify.Web.Spotify();
         }
 
         /// <summary>
@@ -37,7 +39,7 @@ namespace Bungalow
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected  override async void OnLaunched(LaunchActivatedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -63,10 +65,16 @@ namespace Bungalow
             {
                 if (rootFrame.Content == null)
                 {
+                    if (Spotify.IsLoggedIn)
+                        rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    else
+                        rootFrame.Navigate(typeof(LoginPage), e.Arguments);
+              
+                   
+                    
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();

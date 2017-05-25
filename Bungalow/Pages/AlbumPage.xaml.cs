@@ -32,14 +32,15 @@ namespace Bungalow.Pages
             this.InitializeComponent();
             this.Mockify = new Mockify();
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             string uri = (string)e.Parameter;
             string id = uri.Split(':')[2];
             ViewModel = new AlbumPageViewModel()
             {
-                Album = Mockify.GetAlbumById(id)
+                Album = await ((App)App.Current).Spotify.GetAlbumById(id)
             };
+            Bindings.Update();
         }
     }
 }
