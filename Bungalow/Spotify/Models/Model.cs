@@ -23,6 +23,8 @@ namespace Spotify.Web.Models
                 return "";
             }
         }
+        [DataMember(Name="header_image_url")]
+        public string HeaderImageUrl { get; set; }
         [DataMember(Name = "external_urls")]
         public ExternalUrls ExternalUrls { get; set; }
         [DataMember(Name = "external_ids")]
