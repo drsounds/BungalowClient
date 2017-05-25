@@ -10,11 +10,10 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <StackPanel Orientation="Horizontal">
+    <StackPanel Margin="0 0 10 0" Orientation="Horizontal">
         <controls:ImageEx x:Name="Image" Margin="0 0 18 0" Source="{x:Bind Data.ImageUrl}" Width="128" Height="128" />
- 
+
         <StackPanel Padding="2" Orientation="Vertical">
-            <TextBlock x:Name="ContentType" Text="{x:Bind Data.Type}" />
             <TextBlock FontSize="28" Text="{x:Bind Data.Name}" Margin="0 0 0 0" />
             <StackPanel Orientation="Horizontal">
                 <Button>Play</Button>

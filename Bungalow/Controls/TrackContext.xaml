@@ -7,10 +7,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:spotify="using:Spotify.Web.Models"
     mc:Ignorable="d"
+    xmlns:mt="using:MyToolkit.Controls"
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <ListView ItemsSource="{x:Bind Tracks.Items}">
+   <!-- <ListView ItemsSource="{x:Bind Tracks.Items}">
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="spotify:Track">
                 <StackPanel>
@@ -19,5 +20,15 @@
                 </StackPanel>
             </DataTemplate>
         </ListView.ItemTemplate>
-    </ListView>
+    </ListView>-->
+    <mt:DataGrid ItemsSource="{x:Bind Tracks.Items}">
+        <mt:DataGrid.Columns>
+            <mt:DataGridTextColumn Width="200" Header="Title" 
+                  Binding="{Binding Name}" />
+            <mt:DataGridTextColumn Width="200" Header="Artists" 
+                  Binding="{Binding Artist}" />
+            <mt:DataGridTextColumn Width="200" Header="Artists" 
+                  Binding="{Binding Album}" />
+        </mt:DataGrid.Columns>
+    </mt:DataGrid>
 </UserControl>
