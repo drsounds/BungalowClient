@@ -2,8 +2,7 @@
     x:Class="Bungalow.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Bungalow"
-    RequestedTheme="Dark" >
+    xmlns:local="using:Bungalow">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.ThemeDictionaries>
@@ -12,7 +11,7 @@
                     <!--Your accent color-->
                     <Color x:Key="BackColor">#373737</Color>
                     <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush" Color="{ThemeResource BackColor}" />
-
+                    <SolidColorBrush x:Key="ApplicationSidebarThemeBrush" Color="{ThemeResource SystemControlChromeHighAcrylicWindowMediumBrush}" />
                     <SolidColorBrush x:Key="SystemControlBackgroundAccentBrush" Color="{ThemeResource SystemAccentColor}" />
                     <SolidColorBrush x:Key="SystemControlDisabledAccentBrush" Color="{ThemeResource SystemAccentColor}" />
                     <SolidColorBrush x:Key="SystemControlForegroundAccentBrush" Color="{ThemeResource SystemAccentColor}" />

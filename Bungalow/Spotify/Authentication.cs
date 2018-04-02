@@ -39,7 +39,7 @@ namespace Spotify
         }
         public async Task<Session> GetAccessToken(string code)
         {
-            Session session = await RequestResource<Session>("GET", "https://sporal-drsounds.c9users.io/api/services/spotify/authenticate?code=" + code);
+            Session session = await RequestResource<Session>("GET", "https://buddhalow.webfactional.com/authify/token/spotify?code=" + code);
            
 
             return session;

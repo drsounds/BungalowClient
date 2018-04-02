@@ -7,9 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:v="using:Bungalow.ViewModel"
     mc:Ignorable="d">
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
         <Hub DataContext="{x:Bind ViewModel}">
-            <HubSection x:Name="TestHub" Header="Featured Albums">
+            <HubSection x:Name="TestHub" Header="Featured Albums" Width="1014" Height="630">
                 <DataTemplate x:DataType="v:StartPageViewModel">
                     <GridView ItemsSource="{x:Bind FeaturedAlbums.Items}">
                         <GridView.ItemTemplate>

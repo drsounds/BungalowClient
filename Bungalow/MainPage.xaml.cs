@@ -78,7 +78,7 @@ namespace Bungalow
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            Navigate("spotify:artist:2FOROU2Fdxew72QmueWSUy");
+            Navigate("spotify:internal:start");
         }
 
         public MainPageViewModel ViewModel { get; private set; }
@@ -102,6 +102,11 @@ namespace Bungalow
             if (e.AddedItems.Count < 1) return;
             var item = (MenuItem)e.AddedItems[0];
             Navigate(item.Uri);
+
+        }
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

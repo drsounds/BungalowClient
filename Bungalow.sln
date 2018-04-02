@@ -18,6 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Debug|Any CPU.Build.0 = Debug|x86
+		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Debug|ARM.ActiveCfg = Debug|ARM
 		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Debug|ARM.Build.0 = Debug|ARM
 		{0B285C0E-39C4-4CC7-84D8-0FBEECF88391}.Debug|ARM.Deploy.0 = Debug|ARM
@@ -40,5 +42,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6558CF54-D700-4F93-85C2-7CC344E2C2AD}
 	EndGlobalSection
 EndGlobal

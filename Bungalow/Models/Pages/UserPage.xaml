@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
  
-    <StackPanel Padding="28" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <StackPanel Padding="28">
         <TextBlock Text="User"></TextBlock>
         <TextBlock Text="{x:Bind ViewModel.User.Id}"></TextBlock>
     </StackPanel>

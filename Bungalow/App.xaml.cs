@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -42,7 +43,8 @@ namespace Bungalow
         protected  override async void OnLaunched(LaunchActivatedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-
+            var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+coreTitleBar.ExtendViewIntoTitleBar = true;
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (rootFrame == null)
@@ -66,8 +68,11 @@ namespace Bungalow
                 if (rootFrame.Content == null)
                 {
                     if (Spotify.IsLoggedIn)
+
                         rootFrame.Navigate(typeof(MainPage), e.Arguments);
+
                     else
+
                         rootFrame.Navigate(typeof(LoginPage), e.Arguments);
               
                    

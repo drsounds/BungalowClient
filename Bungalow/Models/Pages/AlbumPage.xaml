@@ -9,7 +9,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ScrollViewer>
-        <StackPanel Padding="20" x:Name="StackPanel" DataContext="{Binding ViewModel}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Padding="20" x:Name="StackPanel" DataContext="{Binding ViewModel}">
             
             <bungalow:Header Data="{x:Bind ViewModel.Album}" Width="Auto" Height="128" />
           

@@ -12,7 +12,7 @@
     xmlns:vm="using:Bungalow.ViewModel"
     mc:Ignorable="d">
     <ScrollViewer>
-        <StackPanel Orientation="Vertical" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical" >
             <StackPanel Padding="28">
                 <bungalow:Header Padding="10" Data="{x:Bind ViewModel.Artist}" />
             </StackPanel>

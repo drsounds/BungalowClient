@@ -29,7 +29,7 @@ namespace Bungalow
         public LoginPage()
         {
             this.InitializeComponent();
-            WebView.Navigate(new System.Uri("https://accounts.spotify.com/authorize?client_id=9cae232f0ddd4ba3b55b7e54ca6e76f0&scope=user-read-private user-read-currently-playing user-read-playback-state user-modify-playback-state&response_type=code&redirect_uri=https://sporal-drsounds.c9users.io/callback.html"));
+            WebView.Navigate(new System.Uri("https://buddhalow.webfactional.com/authify/connect/spotify?scope=user-read-private user-read-currently-playing user-read-playback-state user-modify-playback-state"));
 
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -38,9 +38,14 @@ namespace Bungalow
         }
         private async void WebView_NavigationStarting(WebView sender, WebViewNavigationStartingEventArgs args)
         {
-            if (args.Uri.ToString().StartsWith("https://sporal-drsounds.c9users.io/callback.html"))
+          
+        }
+
+        private async void WebView_NavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
+        {
+
+            if (args.Uri.ToString().StartsWith("https://buddhalow.webfactional.com/authify/token/spotify"))
             {
-                args.Cancel = true;
                 string code = args.Uri.Query.Split('=')[1];
                 Authentication authentication = new Authentication();
                 Session session = await authentication.GetAccessToken(code);
@@ -55,6 +60,7 @@ namespace Bungalow
                 Windows.Storage.StorageFolder localFolder =
                     Windows.Storage.ApplicationData.Current.LocalFolder;
                 dcjs.WriteObject(ms, session);
+
                 localSettings.Values["SpotifySession"] = Encoding.ASCII.GetString(ms.ToArray());
                 ((App)App.Current).Spotify = new Spotify.Web.Spotify();
                 Frame.Navigate(typeof(MainPage), null);

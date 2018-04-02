@@ -20,21 +20,6 @@ namespace Bungalow.ViewModel
                 },
                 new MenuItem
                 {
-                    Text="Radio",
-                    Uri="bungalow:radio"
-                },
-                new MenuItem
-                {
-                    Text="Daily mix",
-                    Uri="bungalow:daily-mix"
-                },
-                new MenuItem
-                {
-                    Text="Tracks",
-                    Uri="bungalow:collection-tracks"
-                },
-                new MenuItem
-                {
                     Text="Albums",
                     Uri="bungalow:collection-albums"
                 },
