@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Bungalow.ViewModel;
+using Spotify.Web.Models;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Bungalow.Pages
@@ -28,6 +29,20 @@ namespace Bungalow.Pages
             this.ViewModel = new StartPageViewModel();
         }
 
+
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            ViewModel = new Bungalow.ViewModel.StartPageViewModel
+            {
+                Categories = await ((App)App.Current).Spotify.RequestResource<CategoryList>("GET", "/browse/categories"),
+                FeaturedPlaylists = await ((App)App.Current).Spotify.RequestResource<PlaylistList>("GET", "/browse/featured-playlists"),
+                NewReleases = await ((App)App.Current).Spotify.RequestResource<AlbumList>("GET", "/browse/new-releases")
+            };
+
+            Bindings.Update();
+        }
+
         public StartPageViewModel ViewModel { get; private set; }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bungalow.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,14 @@ namespace Bungalow.Models.Pages
     /// </summary>
     public sealed partial class BrowsePage : Page
     {
+        public BrowsePageViewModel ViewModel { get; set; }
         public BrowsePage()
         {
             this.InitializeComponent();
+            ViewModel = new BrowsePageViewModel()
+            {
+                Categories = new Spotify.Web.Models.CategoryList()
+            };
         }
     }
 }

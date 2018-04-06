@@ -47,7 +47,7 @@ namespace Bungalow
             } else if (uri == "bungalow:internal:login")
             {
                 
-            } else if (new Regex("^bungalow:start$").IsMatch(uri))
+            } else if (new Regex("^bungalow:internal:start$").IsMatch(uri))
             {
                 ViewStack.Navigate(typeof(StartPage));
             }

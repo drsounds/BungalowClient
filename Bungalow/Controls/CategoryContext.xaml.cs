@@ -14,17 +14,17 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+// The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace Bungalow.Controls
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class CategoryContext : Page
+    public sealed partial class CategoryContext : UserControl
     {
-
-        public CategoryList Albums
+        public CategoryContext()
+        {
+            this.InitializeComponent();
+        }
+        public CategoryList Categories
         {
             get { return (CategoryList)GetValue(MyCategoriesProperty); }
             set { SetValue(MyCategoriesProperty, value); Bindings.Update(); }
@@ -36,15 +36,10 @@ namespace Bungalow.Controls
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             if (e.AddedItems.Count < 1) return;
             Model model = (Model)e.AddedItems[0];
 
             MainPage.Current.Navigate(model.Uri);
-        }
-        public CategoryContext()
-        {
-            this.InitializeComponent();
         }
     }
 }

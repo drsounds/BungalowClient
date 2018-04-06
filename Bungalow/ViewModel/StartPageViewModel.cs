@@ -9,12 +9,8 @@ namespace Bungalow.ViewModel
 {
     public class StartPageViewModel
     {
-        public StartPageViewModel()
-        {
-            Spotify.Web.Mockify mockify = new Spotify.Web.Mockify();
-
-            FeaturedAlbums = mockify.GetFeaturedAlbums();
-        }
-        public AlbumList FeaturedAlbums { get; set; }
+        public CategoryList Categories { get; set; }
+        public PlaylistList FeaturedPlaylists { get; internal set; }
+        public AlbumList NewReleases { get; internal set; }
     }
 }

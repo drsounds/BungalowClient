@@ -11,5 +11,7 @@ namespace Spotify.Web.Models
     [DataContract]
     public class PlaylistList : ModelList<Playlist>
     {
+        [DataMember(Name = "message")]
+        public string Message { get; set; }
     }
 }

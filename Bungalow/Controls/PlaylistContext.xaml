@@ -5,10 +5,12 @@
     xmlns:local="using:Bungalow.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:spotify="using:Spotify.Web.Models"
+    xmlns:vm="using:Bungalow.ViewModel"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <GridView ItemsSource="{x:Bind ViewModel.Categories}">
+        <GridView ItemsSource="{x:Bind Playlists}">
             <GridView.ItemTemplate>
                 <DataTemplate x:DataType="spotify:Category">
                     <StackPanel Height="100" Width="100">

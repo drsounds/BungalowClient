@@ -149,6 +149,7 @@
     <Compile Include="Spotify\Models\Category.cs" />
     <Compile Include="Spotify\Models\CategoryList.cs" />
     <Compile Include="Spotify\Models\Chart.cs" />
+    <Compile Include="Spotify\Models\Icon.cs" />
     <Compile Include="Spotify\Models\Search.cs" />
     <Compile Include="Spotify\Models\Session.cs" />
     <Compile Include="Spotify\Models\Album.cs" />

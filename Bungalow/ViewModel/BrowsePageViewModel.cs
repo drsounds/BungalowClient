@@ -1,4 +1,4 @@
-﻿using Bungalow.Spotify.Models;
+﻿using Spotify.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

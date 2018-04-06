@@ -8,13 +8,24 @@
     xmlns:v="using:Bungalow.ViewModel"
     mc:Ignorable="d">
     <Grid>
-        <Hub DataContext="{x:Bind ViewModel}">
-            <HubSection x:Name="TestHub" Header="Featured Albums" Width="1014" Height="630">
+        <Hub Orientation="Vertical" DataContext="{x:Bind ViewModel}">
+            <HubSection x:Name="RecommendedPlaylists" Header="{x:Bind ViewModel.FeaturedPlaylists.Message}" Width="1014" Height="230">
                 <DataTemplate x:DataType="v:StartPageViewModel">
-                    <GridView ItemsSource="{x:Bind FeaturedAlbums.Items}">
+                    <GridView ItemsSource="{x:Bind FeaturedPlaylists.Items}">
                         <GridView.ItemTemplate>
-                            <DataTemplate x:DataType="spotify:Album">
-                                <TextBlock Text="{x:Bind Name}"></TextBlock>
+                            <DataTemplate x:DataType="spotify:Playlist">
+                                <Image Source="{x:Bind Images[0].Url}" Width="25" Height="25" />
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                    </GridView>
+                </DataTemplate>
+            </HubSection>
+            <HubSection x:Name="Categories" Header="Genres and Moods" Width="1014" Height="630">
+                <DataTemplate x:DataType="v:StartPageViewModel">
+                    <GridView ItemsSource="{x:Bind Categories.Items}">
+                        <GridView.ItemTemplate>
+                            <DataTemplate x:DataType="spotify:Category">
+                                <Image Source="{x:Bind Icons[0].Url}" Width="25" Height="25" />
                             </DataTemplate>
                         </GridView.ItemTemplate>
                     </GridView>
