@@ -34,15 +34,30 @@ namespace Bungalow.Pages
         {
             ViewModel = new Bungalow.ViewModel.StartPageViewModel
             {
-                Categories = await ((App)App.Current).Spotify.RequestResource<CategoryList>("GET", "/browse/categories"),
-                FeaturedPlaylists = await ((App)App.Current).Spotify.RequestResource<PlaylistList>("GET", "/browse/featured-playlists"),
-                NewReleases = await ((App)App.Current).Spotify.RequestResource<AlbumList>("GET", "/browse/new-releases")
+                Categories = await ((App)App.Current).Spotify.RequestResource<BrowseCategories>("GET", "/browse/categories"),
+                FeaturedPlaylists = await ((App)App.Current).Spotify.RequestResource<FeaturedPlaylists>("GET", "/browse/featured-playlists"),
+                NewReleases = await ((App)App.Current).Spotify.RequestResource<NewReleases>("GET", "/browse/new-releases")
             };
-
             Bindings.Update();
         }
 
         public StartPageViewModel ViewModel { get; private set; }
 
+        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            if (e.ClickedItem == null) return;
+            Model model = (Model)e.ClickedItem;
+
+            MainPage.Current.Navigate(model.Uri);
+        }
+
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        { 
+            if (e.ClickedItem == null) return;
+            Model model = (Model)e.ClickedItem;
+
+            MainPage.Current.Navigate(model.Uri);
+        }
     }
 }

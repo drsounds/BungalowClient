@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Bungalow.ViewModel
 {
-    public class CategoryPageViewModel
+    public class PlaylistPageViewModel
     {
-        public Category Category { get; set; }
-        public CategoryPlaylists Playlists { get; set; }
+        public Playlist Playlist { get; set; }
+        public PlaylistTrackset Tracks { get; set; }
     }
 }

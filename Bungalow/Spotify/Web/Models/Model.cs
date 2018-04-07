@@ -23,17 +23,28 @@ namespace Spotify.Web.Models
                 return "";
             }
         }
+        [DataMember(Name = "uri")]
+        private string uri;
         [DataMember(Name = "external_urls")]
         public ExternalUrls ExternalUrls { get; set; }
         [DataMember(Name = "external_ids")]
         public ExternalIds ExternalIds { get; set; }
         [DataMember(Name = "images")]
         public List<Image> Images { get; set; }
-        [DataMember(Name="uri")]
         public string Uri
         {
-            get;
-            set;
+            get
+            {
+                if (uri == null)
+                {
+                    return "spotify:" + this.GetType().Name.ToLower() + ":" + this.Id;
+                }
+                return uri;
+            }
+            set
+            {
+                this.uri = value;
+            }
         }
         [DataMember(Name = "href")]
         public string Href

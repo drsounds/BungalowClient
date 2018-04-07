@@ -15,28 +15,18 @@ namespace Bungalow.ViewModel
             {
                 new MenuItem
                 {
-                    Text="Start",
-                    Uri="bungalow:start"
+                    Text="Browse",
+                    Uri="bungalow:internal:start"
                 },
                 new MenuItem
                 {
-                    Text="Albums",
-                    Uri="bungalow:collection-albums"
-                },
-                new MenuItem
-                {
-                    Text="Artists",
-                    Uri="bungalow:collection-artists"
-                },
-                new MenuItem
-                {
-                    Text="Stations",
-                    Uri="bungalow:collection-stations"
+                    Text="Collection",
+                    Uri="bungalow:collection"
                 },
                 new MenuItem
                 {
                     Text="Playlists",
-                    Uri="bungalow:collection-playlists"
+                    Uri="bungalow:playlists"
                 }
             };
         }

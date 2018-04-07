@@ -67,6 +67,14 @@ namespace Bungalow
             {
                 ViewStack.Navigate(typeof(SearchPage), uri);
             }
+            else if (new Regex("^bungalow:category:(.*)$").IsMatch(uri))
+            {
+                ViewStack.Navigate(typeof(CategoryPage), uri);
+            }
+            else if (new Regex("^bungalow:user:(.*):playlist:(.*)$").IsMatch(uri))
+            {
+                ViewStack.Navigate(typeof(PlaylistPage), uri);
+            }
         }
         public MainPage()
         {

@@ -9,8 +9,8 @@ namespace Bungalow.ViewModel
 {
     public class StartPageViewModel
     {
-        public CategoryList Categories { get; set; }
-        public PlaylistList FeaturedPlaylists { get; internal set; }
-        public AlbumList NewReleases { get; internal set; }
+        public BrowseCategories Categories { get; set; }
+        public FeaturedPlaylists FeaturedPlaylists { get; internal set; }
+        public NewReleases NewReleases { get; internal set; }
     }
 }

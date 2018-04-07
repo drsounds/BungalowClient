@@ -4,7 +4,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Bungalow.Models.Pages
+namespace Bungalow.Pages
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -22,10 +22,18 @@ namespace Bungalow.Models.Pages
             string query = uri.Substring("bungalow:category:".Length);
             ViewModel = new Bungalow.ViewModel.CategoryPageViewModel
             {
-                Category = await ((App)App.Current).Spotify.RequestResource<Category>("GET", "/v1/categories/" + query),
-                Playlists = await ((App)App.Current).Spotify.RequestResource<PlaylistList>("GET", "/v1/categories/" + query + "/playlists")
+                Category = await ((App)App.Current).Spotify.RequestResource<Category>("GET", "/browse/categories/" + query),
+                Playlists = await ((App)App.Current).Spotify.RequestResource<CategoryPlaylists>("GET", "/browse/categories/" + query + "/playlists")
             };
             Bindings.Update();
+        }
+
+        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (e.ClickedItem == null) return;
+            Model model = (Model)e.ClickedItem;
+
+            MainPage.Current.Navigate(model.Uri);
         }
     }
 }

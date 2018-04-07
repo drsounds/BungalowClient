@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace Spotify.Web.Models
 {
-
     [DataContract]
-    public class PlaylistList : ModelList<Playlist>
+    public class CategoryPlaylists : Model
     {
-        [DataMember(Name = "message")]
-        public string Message { get; set; }
+        [DataMember(Name="playlists")]
+        public PlaylistList Playlists { get; set; }
     }
 }

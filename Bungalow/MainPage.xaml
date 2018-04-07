@@ -9,10 +9,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <SplitView OpenPaneLength="220" IsPaneOpen="True" DisplayMode="Inline" CompactPaneLength="10" PaneBackground="{StaticResource SystemControlChromeLowAcrylicWindowBrush}">
+    <SplitView OpenPaneLength="220" IsPaneOpen="True" DisplayMode="Inline" CompactPaneLength="10" PaneBackground="{StaticResource SystemControlChromeHighAcrylicWindowMediumBrush}">
         
         <SplitView.Pane>
-            <StackPanel Padding="28">
+            <StackPanel>
                 <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
                     Width="50" Height="50" Background="Transparent" />
                 <TextBox PlaceholderText="Search" KeyDown="TextBox_KeyDown" />

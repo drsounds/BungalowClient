@@ -159,9 +159,9 @@ namespace Spotify.Web
         {
             return await RequestResource<Playlist>("GET", "/users/" + username + "/playlists/" + identifier);
         }
-        public async Task<Trackset> GetPlaylistTracks(string username, string identifier)
+        public async Task<PlaylistTrackset> GetPlaylistTracks(string username, string identifier)
         {
-            return await RequestResource<Trackset>("GET", "/users/" + username + "/playlists/" + identifier + "/tracks");
+            return await RequestResource<PlaylistTrackset>("GET", "/users/" + username + "/playlists/" + identifier + "/tracks");
         }
         public async Task<Trackset> GetAlbumTracks(string identifier)
         {

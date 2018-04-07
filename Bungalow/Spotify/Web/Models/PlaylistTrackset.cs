@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spotify.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -8,11 +9,7 @@ using System.Threading.Tasks;
 namespace Spotify.Web.Models
 {
     [DataContract]
-    public class Followers
+    public class PlaylistTrackset : ModelList<PlaylistRow>
     {
-        [DataMember(Name="href")]
-        public string Href { get; set; }
-        [DataMember(Name ="total")]
-        public int Total { get; set; }
     }
 }

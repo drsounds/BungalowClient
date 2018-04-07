@@ -19,12 +19,14 @@ namespace Spotify.Web
                 }
             };
         }
-        public Trackset GetTrackset()
+        public PlaylistTrackset GetTrackset()
         {
-            return new Trackset
+            return new PlaylistTrackset
             {
                 Items = {
-                    GetTrack()
+                    new PlaylistRow() {
+                        Track =GetTrack()
+                    }
                 }
             };
         }
@@ -131,11 +133,11 @@ namespace Spotify.Web
             return GetUser(id);
         }
         
-        public Trackset GetPlaylistTracks(string username, string identifier)
+        public PlaylistTrackset GetPlaylistTracks(string username, string identifier)
         {
             return GetTrackset();
         }
-        public Trackset GetAlbumTracks(string identifier)
+        public PlaylistTrackset GetAlbumTracks(string identifier)
         {
             return GetTrackset();
         }
