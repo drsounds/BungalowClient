@@ -28,5 +28,10 @@ namespace Bungalow.Pages
             };
             Bindings.Update();
         }
+
+        private void Header_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+
+        }
     }
 }

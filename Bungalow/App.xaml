@@ -6,7 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.ThemeDictionaries>
-                <ResourceDictionary x:Key="Dark">
+                <ResourceDictionary x:Key="Light">
                     <Color x:Key="SystemAccentColor">#1db954</Color>
                     <!--Your accent color-->
                     <Color x:Key="BackColor">#373737</Color>

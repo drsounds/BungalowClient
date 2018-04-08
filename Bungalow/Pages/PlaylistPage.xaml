@@ -9,7 +9,7 @@
     mc:Ignorable="d">
     <ScrollViewer>
         <StackPanel Padding="20" x:Name="StackPanel" DataContext="{Binding ViewModel}">
-            <bungalow:Header Data="{x:Bind ViewModel.Playlist}" Width="Auto" Height="128" />
+            <bungalow:Header Data="{x:Bind ViewModel.Playlist}" Width="Auto" Height="128" Loaded="Header_Loaded" />
 
             <bungalow:PlaylistTrackContext PlaylistTracks="{x:Bind ViewModel.Tracks}" />
         </StackPanel>

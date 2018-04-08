@@ -8,25 +8,38 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="55" />
+        </Grid.RowDefinitions>
 
-    <SplitView OpenPaneLength="220" IsPaneOpen="True" DisplayMode="Inline" CompactPaneLength="10" PaneBackground="{StaticResource SystemControlChromeHighAcrylicWindowMediumBrush}">
-        
-        <SplitView.Pane>
-            <StackPanel>
-                <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+        <SplitView Grid.Row="0" Grid.Column="0" OpenPaneLength="220" IsPaneOpen="True" DisplayMode="Inline" CompactPaneLength="10" PaneBackground="{StaticResource SystemControlChromeHighAcrylicWindowMediumBrush}">
+
+            <SplitView.Pane>
+                <StackPanel>
+                    <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
                     Width="50" Height="50" Background="Transparent" />
-                <TextBox PlaceholderText="Search" KeyDown="TextBox_KeyDown" />
-                <ListView ItemsSource="{x:Bind ViewModel.MenuItems}" SelectionChanged="ListView_SelectionChanged" ItemClick="ListView_ItemClick">
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="bungalow:MenuItem">
-                            <TextBlock Text="{x:Bind Text}"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackPanel>
-        </SplitView.Pane>
-        <SplitView.Content>
-            <Frame Name="ViewStack"></Frame>
-        </SplitView.Content>
-    </SplitView>
+                    <TextBox PlaceholderText="Search" KeyDown="TextBox_KeyDown" />
+                    <ListView ItemsSource="{x:Bind ViewModel.MenuItems}" SelectionChanged="ListView_SelectionChanged" ItemClick="ListView_ItemClick">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="bungalow:MenuItem">
+                                <TextBlock Text="{x:Bind Text}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Frame Name="ViewStack"></Frame>
+            </SplitView.Content>
+        </SplitView>
+        <StackPanel Grid.Row="1" Grid.Column="0" Width="Auto" Background="{StaticResource SystemControlChromeMediumAcrylicWindowMediumBrush}">
+            
+        </StackPanel>
+    </Grid>
+    
 </Page>

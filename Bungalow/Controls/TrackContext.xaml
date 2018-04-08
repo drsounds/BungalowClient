@@ -11,14 +11,16 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <ListView ItemsSource="{x:Bind Tracks.Items}">
-        <ListView.ItemTemplate>
+    <GridView ItemsSource="{x:Bind Tracks.Items}">
+        <GridView.ItemTemplate>
             <DataTemplate x:DataType="spotify:Track">
                 <StackPanel>
                     <TextBlock Text="{x:Bind Name}" />
+                    <TextBlock FontSize="10" Text="{x:Bind DurationMS}" />
                     <TextBlock FontSize="10" Text="{x:Bind Artist}" />
+                    <TextBlock FontSize="10" Text="{x:Bind Album}" />
                 </StackPanel>
             </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+        </GridView.ItemTemplate>
+    </GridView>
 </UserControl>

@@ -13,7 +13,7 @@ namespace Spotify.Web.Models
         {
             get
             {
-                return String.Join(" • ", this.Artists.Select(a => a.Name));
+                 return String.Join(" • ", this.Artists.Select(a => a.Name));
             }
         }
         public Track()

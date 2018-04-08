@@ -16,9 +16,10 @@
         <StackPanel Padding="2" Orientation="Vertical">
             <TextBlock x:Name="ContentType" Text="{x:Bind Data.Type}" />
             <TextBlock FontSize="28" Text="{x:Bind Data.Name}" Margin="0 0 0 28" />
-            <StackPanel Orientation="Horizontal">
-                <Button>Play</Button>
-                <Button>...</Button>
+            <StackPanel Orientation="Horizontal" Spacing="5">
+                <Button Foreground="White" Background="{StaticResource SystemControlBackgroundAccentBrush}">Play</Button>
+                <Button Background="Transparent" BorderBrush="{ThemeResource SystemControlForegroundBaseHighBrush}">Follow</Button>
+                <Button Background="Transparent" BorderBrush="{ThemeResource SystemControlForegroundBaseHighBrush}">...</Button>
             </StackPanel>
         </StackPanel>
     </StackPanel>

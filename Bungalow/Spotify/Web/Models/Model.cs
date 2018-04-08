@@ -23,6 +23,21 @@ namespace Spotify.Web.Models
                 return "";
             }
         }
+        [DataMember(Name = "href")]
+        public string href;
+
+        public string Href
+        {
+            get
+            {
+                if (href == null) return null;
+                if (href.StartsWith("https://api.spotify.com"))
+                {
+                    return href.Substring("https://api.spotify.com/v1".Length);
+                }
+                return href;
+            }
+        }
         [DataMember(Name = "uri")]
         private string uri;
         [DataMember(Name = "external_urls")]
@@ -46,12 +61,7 @@ namespace Spotify.Web.Models
                 this.uri = value;
             }
         }
-        [DataMember(Name = "href")]
-        public string Href
-        {
-            get;
-            set;
-        }
+        
         [DataMember(Name = "name")]
         public string Name
         {
